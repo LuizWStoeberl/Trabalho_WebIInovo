@@ -14,13 +14,26 @@ class ControllerUsuario extends Controller
         return view('pages.lista', ['usuarios' => $usuarios]);
     }
     
-    public function editar(){
+
+    public function buscarContato($name){
+        $contato = contacts::where( 'name', $name)->first();
+        return view('pages.editar',  compact('contato'));
         
-        $editarusuario = contacts::where('name', '$usuarionome')
-                                   ->where('email', '$usuarioemail')
-                                   ->where('phone', '$usuariophone')
-                                   ->get();
-        
-        return view('pages.editar', ['editarusuario' => $editarusuario]);
     }
+
+    public function atualizarContato(Request $request, $id){
+        $contato = contacts::find($id);
+
+        if(!$contato){
+            return redirect()->back()->with('error', 'Contato não encontrado!');
+        }
+        
+        $contato->name = $request->name;
+        $contato->email = $request->email;
+        $contato->phone = $request->phone;
+        $contato->save();
+        return redirect()->route('listacontatos');
+    }
+
+    
 }

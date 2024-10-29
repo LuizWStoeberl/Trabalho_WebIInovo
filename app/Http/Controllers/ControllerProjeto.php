@@ -14,4 +14,8 @@ class ControllerProjeto extends Controller
     public function contacts(){
         return view('pages.contatos');
     }
+
+    public function edicao(){
+        return view('pages.editar');
+    }
 }

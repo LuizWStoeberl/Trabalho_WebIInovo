@@ -23,19 +23,11 @@
         </div>
             
             <button> deletar </button>
-           
-
-            <a href="/edicaousuario"> 
-            <button>    
             
+
+            <a  href="{{ route('buscarContato', $usuario->name)}}" > 
+            <button>    
             Editar
-
-            <script>
-            let usuarionome = $usuario->name;
-            let usuarioemail = $usuario->email;
-            let usuariophone = $usuario->phone;
-            </script>
-
             </button>
             </a>    
         </div>
