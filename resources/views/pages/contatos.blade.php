@@ -35,4 +35,8 @@
     <a href="/">
         <button> Voltar para o menu inicial </button>
     </a>
+    <br>
+     <a href="/listacontatos">
+    <button> Ir para a lista de contatos </button>
+    </a>
 @endsection

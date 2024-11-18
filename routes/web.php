@@ -13,3 +13,4 @@ Route::get('/listacontatos', [ControllerUsuario::class, 'index'])->name('listaco
 Route::get('/edicaousuario', [ControllerProjeto::class, 'edicao'])->name('edicaousuario');
 Route::get('/edicaousuario/{name}', [ControllerUsuario::class, 'buscarContato'])->name('buscarContato');
 Route::post('/edicaousuario/{id}', [ControllerUsuario::class, 'atualizarContato'])->name('atualizarContato');
+Route::delete('/edicaousuario/{id}', [ControllerUsuario::class, 'excluirContato'])->name('excluirContato');

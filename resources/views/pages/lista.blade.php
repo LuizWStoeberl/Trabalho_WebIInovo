@@ -3,7 +3,9 @@
 @section('title', 'lista')
 
 @section('content')
-    <h1> lista de usuários </h1>
+
+<h1> Lista de contatos </h1>
+    
     <br>
         @foreach($usuarios as $usuario)
         <div>
@@ -21,11 +23,13 @@
                     {{$usuario->phone}} 
                 </div>
         </div>
-            
-            <button> deletar </button>
-            
+            <form action="{{ route('excluirContato', $usuario->id)}}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="submit" onclick="return confirm('Deseja exlcuir esse contato?')"> deletar </button>
+            </form>
 
-            <a  href="{{ route('buscarContato', $usuario->name)}}" > 
+            <a  href="{{ route('buscarContato', $usuario->name)}}"> 
             <button>    
             Editar
             </button>
@@ -36,4 +40,6 @@
     <a href="/">
     <button> Voltar para o menu inicial </button>
     </a>
+    <br>
+   
 @endsection

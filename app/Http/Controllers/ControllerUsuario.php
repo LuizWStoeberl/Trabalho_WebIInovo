@@ -17,8 +17,7 @@ class ControllerUsuario extends Controller
 
     public function buscarContato($name){
         $contato = contacts::where( 'name', $name)->first();
-        return view('pages.editar',  compact('contato'));
-        
+        return view('pages.editar',  compact('contato'));  
     }
 
     public function atualizarContato(Request $request, $id){
@@ -35,5 +34,11 @@ class ControllerUsuario extends Controller
         return redirect()->route('listacontatos');
     }
 
-    
+    public function excluirContato($id){
+        $contato = contacts::find($id);
+        $contato -> delete();
+
+        return redirect()->route('listacontatos');
+    }
+
 }

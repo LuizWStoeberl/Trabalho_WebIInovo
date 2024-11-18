@@ -6,12 +6,11 @@
             
 <h1> Editar Informações de {{ $contato->name}} </h1>
     
-   <form action="{{ route('atualizarContato', $contato->id) }}" method="POST">
+   <form action="{{ route('atualizarContato', $contato->id)}}" method="POST">
         @csrf
         <div class="mb-3">
             <label for="name" class="form-label">
             Nome
-            
             </label> 
             <input type="text" class="form-control" id="name" name="name" value="{{ $contato->name}}" required>
         </div>

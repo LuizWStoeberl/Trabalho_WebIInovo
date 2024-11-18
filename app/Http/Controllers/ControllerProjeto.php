@@ -18,4 +18,8 @@ class ControllerProjeto extends Controller
     public function edicao(){
         return view('pages.editar');
     }
+
+    public function filtro(){
+        return view('pages.filtro');
+}
 }
