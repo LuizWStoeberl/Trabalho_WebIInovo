@@ -3,7 +3,7 @@
 @section('title', 'contatos')
 
 @section('content')
-    <h1> Contatos </h1>
+    <h1 class="titulo"> Contatos </h1>
     <form action="{{ route('contact.store') }}" method="POST">
         @csrf
         <div class="mb-3">
@@ -21,22 +21,31 @@
             </label>
             <input type="email" class="form-control" id="email" name="email" required>
         </div>
-
+    
          <div class="mb-3">
             <label for="phone" class="form-label">
             Telefone
             </label>
             <input type="phone" class="form-control" id="phone" name="phone" required>
         </div>
-
-        <button type="submit" > Salvar </button>
+    <div class="botoespagicontato">
+    <div>
+        <button type="submit" class="btn btn-outline-primary">Salvar </button>
     </form>
-    
+    </div>
+    <div class="menu">
     <a href="/">
-        <button> Voltar para o menu inicial </button>
+        <button type="button" class="btn btn-outline-primary"> Voltar para o menu inicial </button>
     </a>
-    <br>
+    </div>
+    <div class="contatos">
      <a href="/listacontatos">
-    <button> Ir para a lista de contatos </button>
+    <button type="button" class="btn btn-outline-primary"> Ir para a lista de contatos </button>
     </a>
+    </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Meu Site. Todos os direitos reservados.</p>
+    </footer>
 @endsection

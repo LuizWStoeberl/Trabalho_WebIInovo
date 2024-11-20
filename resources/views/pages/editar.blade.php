@@ -29,7 +29,10 @@
             <input type="phone" class="form-control" id="phone" name="phone" value="{{ $contato->phone}}" required>
         </div>
 
-        <button type="submit" > Atualizar </button>
+        <button type="submit" class="btn btn-outline-primary"> Atualizar </button>
     </form>
     
+     <footer>
+        <p>&copy; 2024 Meu Site. Todos os direitos reservados.</p>
+    </footer>
 @endsection
